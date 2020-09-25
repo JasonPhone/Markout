@@ -1273,8 +1273,9 @@ class parser():
                 continue
             # img
             fimg = re.compile(r"!\[.+\]\(.+( \".+\")?\)")
-            if fimg.match(src[i:]) and (i < n - 1 and src[i + 1] == '['
-                              ) and not incode and not inbold and not initalic:
+            if fimg.match(src[i:]) and (
+                    i < n - 1 and src[i + 1] == '['
+            ) and not incode and not inbold and not initalic:
                 v.children.append(self.Node(formats.img))
                 # collect the keywords
                 i += 2
@@ -1296,7 +1297,8 @@ class parser():
                 continue
             # href
             fhref = re.compile(r"\[.+\]\(.+( \".+\")?\)")
-            if fhref.match(src[i:]) and not incode and not inbold and not initalic:
+            if fhref.match(
+                    src[i:]) and not incode and not inbold and not initalic:
                 if i == 0 or (i > 0 and src[i - 1] != '!'):
                     v.children.append(self.Node(formats.href))
                     # collect the keywords
