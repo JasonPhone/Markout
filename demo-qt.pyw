@@ -86,7 +86,7 @@ class Main_Window(QMainWindow):
         dsk = QApplication.desktop()
         self.window_width = dsk.width() * 0.7
         self.window_height = dsk.height() * 0.7
-        self.resize(self.window_width, self.window_height)
+        self.resize(int(self.window_width), int(self.window_height))
 
     def open(self):
         content = ""
